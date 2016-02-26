@@ -1,0 +1,13 @@
+
+<h2 class="title is-2"><%= "#{@concert.artist}'s Concert" %></h2>
+<br>
+
+<ul>
+   <li><%= "Place: #{@concert.venue}"%></li>
+   <li><%= "City: #{@concert.city}"%></li>
+   <li><%= "Date: #{@concert.date.to_date}"%></li>
+   <li><%= "Price: $#{@concert.price}"%></li>
+   <li><%= "Description: #{@concert.description}"%></li>
+</ul>
+<br>
+<%= link_to("Today Concerts", concerts_path) %>

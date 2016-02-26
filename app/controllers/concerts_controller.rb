@@ -1,13 +1,18 @@
 class ConcertsController < ApplicationController
 
-  def index
+  def home
     @concert = Concert.all
+  end
+
+  def index
+    from = Time.now.midnight
+    to = Time.now.midnight + 1.day
+    @concert = Concert.where(date: from..to)
 
   end
 
   def new
     @concert = Concert.new
-
   end
 
   def create
@@ -19,8 +24,14 @@ class ConcertsController < ApplicationController
       flash[:alert] = "ALERT Concert not created"
       render 'new'
     end
-
   end
+
+    def show
+      @concert = Concert.find_by(id: params[:id])
+    end
+
+
+
 
   private
 

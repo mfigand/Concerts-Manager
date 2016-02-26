@@ -7,21 +7,50 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar">
+    <p class="navbar-item is-text-centered">
+      <a class="link is-info" href="/">Home</a>
+    </p>
+    <p class="navbar-item is-text-centered">
+      <a class="link is-info" href="/concerts">Today Concerts</a>
+    </p>
+    <p class="navbar-item is-text-centered">
+      <img src="/header-concerts.jpg" alt="" style="height: 33px;">
+    </p>
+    <p class="navbar-item is-text-centered">
+      <a class="link is-info" href="/concerts/new">Create Concert</a>
+    </p>
+    <p class="navbar-item is-text-centered">
+      <a class="link is-info" href="/">All concerts</a>
+    </p>
+  </nav>
 
-  <div id="wrapper">
-      <header>
-        <p>👹💀💀💀💀💀💀💀💀💀👹</p>
-        <h1>MusiKoncerts</h1>
-        <p>👹💀💀💀💀💀💀💀💀💀👹</p>
-      </header>
-
+  <div class="columns">
+    <div class="column is-1"></div>
+    <div class="column">
       <%= yield %>
-      <footer>
-        <br>
-        <br>
-        💀💀💀💀💀💀💀💀💀💀💀💀<br>
-         Ironhack | Copyrigth 2016
-      </footer>
+    </div>
+    <div class="column is-1"></div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content is-centered">
+        <p>
+          <strong class="content is-centered">MusiKoncert Network</strong> by <a href="https://github.com/mfigand">Manuel Figueroa</a>. The source code is licensed
+          <a href="https://github.com/mfigand">ME</a>. The website content
+          is licensed <a href="https://github.com/mfigand">MFIGAND</a>.
+        </p>
+        <p>
+          <a class="icon" href="https://github.com/jgthms/bulma">
+            <i class="fa fa-github"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
 
   </div></body>
 </html>
