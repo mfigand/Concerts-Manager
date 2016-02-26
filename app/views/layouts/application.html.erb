@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MusicConcert</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-track' => true %>
+  <%= javascript_include_tag 'application', 'data-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div id="wrapper">
+      <header>
+        <p>👹💀💀💀💀💀💀💀💀💀👹</p>
+        <h1>MusiKoncerts</h1>
+        <p>👹💀💀💀💀💀💀💀💀💀👹</p>
+      </header>
+
+      <%= yield %>
+      <footer>
+        <br>
+        <br>
+        💀💀💀💀💀💀💀💀💀💀💀💀<br>
+         Ironhack | Copyrigth 2016
+      </footer>
+
+  </div></body>
+</html>

@@ -1,0 +1,8 @@
+<h1>Up Comming Concerts</h1>
+
+<ul>
+  <% @concert.each do |concert| %>
+     <li><%= "#{concert.artist} at #{concert.venue}, #{concert.city}.  -  Date: #{concert.date.to_date},  -  Price: $#{concert.price}.  -  #{concert.description}"%>
+    </li>
+  <% end%>
+</ul>
