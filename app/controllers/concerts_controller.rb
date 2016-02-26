@@ -5,9 +5,8 @@ class ConcertsController < ApplicationController
   end
 
   def index
-    from = Time.now.midnight
-    to = Time.now.midnight + 1.day
-    @concert = Concert.where(date: from..to)
+    @concert = Concert.get_today_concert
+    @concertMonth = Concert.get_month_concert
 
   end
 

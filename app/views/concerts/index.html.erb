@@ -1,12 +1,24 @@
 <h2 class="title is-2">Today Concerts</h2>
 <br>
 
-<ul>
-  <% @concert.each do |concert| %>
-     <li><%= "#{concert.artist} at #{concert.venue}, #{concert.city}."%>
-       <%= link_to("Details", concert_path(concert)) %>
-    </li>
-  <% end%>
-</ul>
-<br>
-<%= link_to("Upcomming Concerts", "/") %>
+<div class="columns">
+  <div class="column">
+    <ul>
+      <% @concert.each do |concert| %>
+         <li><%= "#{concert.artist} at #{concert.venue}, #{concert.city}."%>
+           <%= link_to("Details", concert_path(concert)) %>
+        </li>
+      <% end%>
+    </ul>
+    <br>
+    <%= link_to("Upcomming Concerts", "/") %>
+  </div>
+
+  <div class="column is-2">
+    <% @concertMonth.each do |concert| %>
+       <li>
+         <%= link_to("#{concert.artist}", concert_path(concert)) %>
+      </li>
+    <% end%>
+  </div>
+</div>
