@@ -19,7 +19,11 @@ class Concert < ActiveRecord::Base
   def self.search_by_price(price)
     @future_concerts = Concert.where('date >= ?', Time.now)
     @future_concerts.where('price <= ?', price.to_i)
+  end
 
+  def self.get_most_commented
+    @all_comments= Comment.all
+    @all_comments.group(:concert_id).count.sort_by{|k,v| v}.reverse[0..9]
   end
 
 end

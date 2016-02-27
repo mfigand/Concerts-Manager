@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   post '/concerts/show_search' => 'concerts#show_search'
 
+  get '/concerts/top_commented' => 'concerts#top_commented'
+
   resources :concerts, only: [:index, :new, :create, :show] do
     resources :comments, only:[:create]
 

@@ -31,6 +31,11 @@ class ConcertsController < ApplicationController
       @search_result = Concert.search_by_price(params[:search])
     end
 
+    def top_commented
+      @top_commented = Concert.get_most_commented
+
+    end
+
   private
 
   def concert_params
