@@ -1,0 +1,16 @@
+<strong><h2 class="title is-2">Search Result</h2></strong>
+<br>
+
+<div class="columns">
+  <div class="column">
+    <ul>
+      <% @search_result.each do |result| %>
+         <li><%= "#{result.artist} at #{result.venue}, #{result.city}."%>
+           <%= link_to("Details", concert_path(result)) %>
+        </li>
+      <% end%>
+    </ul>
+    <br>
+    <%= link_to("Back", concerts_search_path) %>
+  </div>
+</div>

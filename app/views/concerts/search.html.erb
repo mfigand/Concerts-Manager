@@ -1,0 +1,28 @@
+<strong><h2 class="title is-2">Search Concert</h2></strong>
+<br>
+
+<form action="/concerts/show_search" method="POST">
+
+  <p class="control">
+    <label class="label">Search by</label>
+    <span class="select">
+      <select name="selection">
+        <option value="price">Price</option>
+        <option value="artist">Artist</option>
+        <option value="venue">Venue</option>
+        <option value="city">City</option>
+        <option value="date">Date</option>
+      </select>
+    </span>
+  </p>
+
+  <p class="control">
+    <label class="label">search by price</label>
+    <input class="input" name="search" type="text" placeholder="search by">
+  </p>
+  <div>
+    <button type="submit">Search</button>
+  </div>
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>

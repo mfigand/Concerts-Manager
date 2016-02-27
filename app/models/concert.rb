@@ -15,4 +15,11 @@ class Concert < ActiveRecord::Base
     end_month = Time.now.end_of_month
     Concert.where(date: from..end_month)
   end
+
+  def self.search_by_price(price)
+    @future_concerts = Concert.where('date >= ?', Time.now)
+    @future_concerts.where('price <= ?', price.to_i)
+
+  end
+
 end

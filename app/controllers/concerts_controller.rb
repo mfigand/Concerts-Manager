@@ -1,9 +1,5 @@
 class ConcertsController < ApplicationController
 
-  def home
-    @concert = Concert.all
-  end
-
   def index
     @concert = Concert.get_today_concert
     @concertMonth = Concert.get_month_concert
@@ -31,8 +27,9 @@ class ConcertsController < ApplicationController
       @comment_new = Comment.new
     end
 
-
-
+    def show_search
+      @search_result = Concert.search_by_price(params[:search])
+    end
 
   private
 

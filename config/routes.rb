@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
-  get '/' => 'concerts#home'
+  get '/' => 'site#home'
+
+  get '/concerts/search'  => 'concerts#search'
+
+  post '/concerts/show_search' => 'concerts#show_search'
 
   resources :concerts, only: [:index, :new, :create, :show] do
-    resources :comments, only:[:create, :show]
+    resources :comments, only:[:create]
 
   end
 
