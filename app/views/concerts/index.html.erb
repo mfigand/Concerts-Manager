@@ -15,6 +15,7 @@
   </div>
 
   <div class="column is-2">
+    <h2 class="subtitle">Concerts this month</h2>
     <% @concertMonth.each do |concert| %>
        <li>
          <%= link_to("#{concert.artist}", concert_path(concert)) %>

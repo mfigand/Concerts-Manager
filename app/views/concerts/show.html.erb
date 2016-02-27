@@ -2,12 +2,46 @@
 <h2 class="title is-2"><%= "#{@concert.artist}'s Concert" %></h2>
 <br>
 
-<ul>
-   <li><%= "Place: #{@concert.venue}"%></li>
-   <li><%= "City: #{@concert.city}"%></li>
-   <li><%= "Date: #{@concert.date.to_date}"%></li>
-   <li><%= "Price: $#{@concert.price}"%></li>
-   <li><%= "Description: #{@concert.description}"%></li>
-</ul>
+<div class="columns">
+  <div class="column">
+    <ul>
+       <li><%= "Place: #{@concert.venue}"%></li>
+       <li><%= "City: #{@concert.city}"%></li>
+       <li><%= "Date: #{@concert.date.to_date}"%></li>
+       <li><%= "Price: $#{@concert.price}"%></li>
+       <li><%= "Description: #{@concert.description}"%></li>
+    </ul>
+    <br>
+    <%= link_to("Today Concerts", concerts_path) %>
+  </div>
+
+  <div class="column">
+    <p class="control">
+
+      <% if @concert.errors.any? %>
+        <ul class="notification is-danger">
+          <button class="delete"></button>
+          <% @concert.errors.full_messages.each do |error| %>
+           <li><%= error %> </li>
+          <% end %>
+        </ul>
+      <% end%>
+
+      <%= form_for [@concert, @comment_new] do |f| %>
+      <%= f.label :comment, class:"label" %>
+      <%= f.text_area :comment, class:"textarea" %>
+      </p>
+        <%= f.submit 'Save', class:"button is-primary" %>
+        <button class="button">Cancel</button>
+      </p>
+      <% end %>
+  </div>
+
+</div>
 <br>
-<%= link_to("Today Concerts", concerts_path) %>
+
+<ul>
+  <% @comments_concert.each do |concert| %>
+     <li><%= "#{concert.comment}"%></li>
+  <% end%>
+</ul>

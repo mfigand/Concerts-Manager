@@ -15,7 +15,7 @@ class ConcertsController < ApplicationController
   end
 
   def create
-    @concert = Concert.new entry_params
+    @concert = Concert.new concert_params
     if @concert.save
       flash[:notice] = "Concert created succesfully"
       redirect_to action: :index, concert_id: @concert.id
@@ -27,6 +27,8 @@ class ConcertsController < ApplicationController
 
     def show
       @concert = Concert.find_by(id: params[:id])
+      @comments_concert = @concert.comments
+      @comment_new = Comment.new
     end
 
 
@@ -34,7 +36,7 @@ class ConcertsController < ApplicationController
 
   private
 
-  def entry_params
+  def concert_params
    params.require(:concert).permit(:artist, :venue, :city, :date, :price, :description)
   end
 
