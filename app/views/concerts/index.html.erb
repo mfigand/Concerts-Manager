@@ -3,13 +3,28 @@
 
 <div class="columns">
   <div class="column">
-    <ul>
-      <% @concert.each do |concert| %>
-         <li><%= "#{concert.artist} at #{concert.venue}, #{concert.city}."%>
-           <%= link_to("Details", concert_path(concert)) %>
-        </li>
-      <% end%>
-    </ul>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Venue</th>
+          <th>City</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @concert.each do |concert| %>
+          <tr>
+            <td><%= concert.artist %></td>
+            <td><%= concert.venue %></td>
+            <td><%= concert.city %></td>
+            <td><%= link_to("Details", concert_path(concert)) %></td>
+          </tr>
+        <% end%>
+      </tbody>
+    </table>  
+
     <br>
     <%= link_to("Upcomming Concerts", "/") %>
   </div>

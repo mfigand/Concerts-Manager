@@ -7,15 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar">
+
+  <nav class="navbar" style="font-size: large;">
     <p class="navbar-item is-text-centered">
       <a class="link is-info" href="/">All Concerts</a>
     </p>
     <p class="navbar-item is-text-centered">
       <a class="link is-info" href="/concerts">Today Concerts</a>
     </p>
-    <p class="navbar-item is-text-centered">
-      <img src="/header-concerts.jpg" alt="" style="height: 33px;">
+    <p class="navbar-item is-text-centered central_logo">
+      <!-- Concerts Handler -->
+      <img src="/header-concerts.jpg">
     </p>
     <p class="navbar-item is-text-centered">
       <a class="link is-info" href="/concerts/new">Create Concert</a>
@@ -26,11 +28,15 @@
   </nav>
 
   <div class="columns">
+
     <div class="column is-1"></div>
+
     <div class="column">
       <%= yield %>
     </div>
+
     <div class="column is-1"></div>
+
   </div>
 
 
@@ -38,10 +44,13 @@
   <footer class="footer">
     <div class="container">
       <div class="content is-centered">
-        <p>
-          <strong class="content is-centered">MusiKoncert Network</strong> by <a href="https://github.com/mfigand">Manuel Figueroa</a>. The source code is licensed
-          <a href="https://github.com/mfigand">ME</a>. The website content
-          is licensed <a href="https://github.com/mfigand">MFIGAND</a>.
+        <p style="font-size: x-large;">
+          <strong class="content is-centered">MusiKoncert Network</strong> by <a href="https://github.com/mfigand">Manuel Figueroa</a>.
+          <br>
+          This is a Concert Handler. It allows you Create, Update and Manage Concerts.
+          <br>
+          Check out my <strong> <a href="https://github.com/mfigand">Github</a> </strong>
+          <br> and <strong> <a href="https://github.com/mfigand">Linkedin</a> </strong>.
         </p>
         <p>
           <a class="icon" href="https://github.com/jgthms/bulma">
@@ -52,5 +61,5 @@
     </div>
   </footer>
 
-  </div></body>
+ </body>
 </html>

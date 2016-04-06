@@ -11,22 +11,23 @@
 
 <%= form_for [@concert] do |f| %>
   <%= f.label :artist %>
-  <%= f.text_field :artist, size: 10 %>
+  <%= f.text_field :artist, class:"control input" %>
   <br>
   <%= f.label :venue %>
-  <%= f.text_field :venue, size: 10 %>
+  <%= f.text_field :venue, class:"control input"  %>
   <br>
   <%= f.label :city %>
-  <%= f.text_field :city, size: 10 %>
-  <br>
-  <%= f.label :date %>
-  <%= f.datetime_select :date, size: 10 %>
+  <%= f.text_field :city, class:"control input" %>
   <br>
   <%= f.label :price %>
-  <%= f.number_field :price, step: 0.5, size: 4 %>
+  <%= f.number_field :price, step: 0.5, class:"control input"  %>
   <br>
   <%= f.label :description %>
-  <%= f.text_field :description, size: 15 %>
+  <%= f.text_field :description, class:"control input" %>
+  <br>
+  <%= f.label :date %>
+  <%= f.datetime_select :date, size: 10, class:"control input"  %>
+  <br>
   <br>
 
   <%= f.submit 'Save' %>
